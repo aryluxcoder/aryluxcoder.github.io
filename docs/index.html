@@ -1,8 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>AryStation</title></head>
-<body style="margin:0; height:100vh; overflow:hidden;">
-  <iframe src="https://a11.asurahosting.com/public/arystation"
-          style="border:none; width:100%; height:100vh;" allowfullscreen></iframe>
+<head>
+    <title>AryStation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .nav-btn:hover::before {
+            left: 100%;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .nav-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .live-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #ff4444;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 1rem;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .nav-buttons {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">🎧 Radio MetaChitect</h1>
+        <p class="tagline">Your Ultimate Radio Experience</p>
+        
+        <div class="nav-buttons">
+            <a href="/arystation" class="nav-btn">
+                🎵 AryStation
+            </a>
+            <a href="/stream" class="nav-btn">
+                <span class="live-indicator"></span>Live Stream
+            </a>
+            <a href="/dj" class="nav-btn">
+                🎤 DJ Portal
+            </a>
+            <a href="/podcasts" class="nav-btn">
+                🎙️ Podcasts
+            </a>
+            <a href="/schedule" class="nav-btn">
+                📅 Schedule
+            </a>
+            <a href="/ondemand" class="nav-btn">
+                📻 On Demand
+            </a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2024 Radio MetaChitect - Broadcasting Excellence</p>
+    </div>
 </body>
 </html>
