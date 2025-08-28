@@ -236,18 +236,54 @@
                 <span class="live-indicator"></span>
                 🎵 Live Stream
             </div>
-            <audio controls preload="none">
-                <source src="https://radio.metachitect.com:8740/radio.mp3" type="audio/mpeg">
-                <source src="https://radio.metachitect.com:8740/radio.mp3" type="audio/mp3">
+            <audio controls preload="metadata" id="radioPlayer">
+                <source src="https://a11.asurahosting.com:8740/radio.mp3" type="audio/mpeg">
+                <source src="https://a11.asurahosting.com:8740/stream" type="audio/mpeg">
+                <source src="https://a11.asurahosting.com:8740/radio" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
+            <div class="stream-status" id="streamStatus" style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+                Click play to start streaming...
+            </div>
         </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const audio = document.getElementById('radioPlayer');
+                const status = document.getElementById('streamStatus');
+                
+                audio.addEventListener('loadstart', () => {
+                    status.textContent = 'Loading stream...';
+                });
+                
+                audio.addEventListener('canplay', () => {
+                    status.textContent = 'Ready to play';
+                });
+                
+                audio.addEventListener('play', () => {
+                    status.textContent = '🔴 Now Playing Live';
+                });
+                
+                audio.addEventListener('pause', () => {
+                    status.textContent = 'Stream paused';
+                });
+                
+                audio.addEventListener('error', (e) => {
+                    console.error('Audio error:', e);
+                    status.textContent = 'Stream unavailable - try the direct link below';
+                });
+                
+                audio.addEventListener('stalled', () => {
+                    status.textContent = 'Stream connecting...';
+                });
+            });
+        </script>
         
         <div class="nav-buttons">
             <a href="/arystation" class="nav-btn">
                 🎵 AryStation
             </a>
-            <a href="https://radio.metachitect.com:8740/radio.mp3" target="_blank" class="nav-btn">
+            <a href="https://a11.asurahosting.com:8740/radio.mp3" target="_blank" class="nav-btn">
                 <span class="live-indicator"></span>Live Stream
             </a>
             <a href="/dj" class="nav-btn">
