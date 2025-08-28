@@ -40,9 +40,9 @@
         }
         
         .logo img {
-            height: 120px;
+            height: 480px;
             width: auto;
-            filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.4));
+            filter: drop-shadow(4px 4px 16px rgba(0,0,0,0.5));
         }
         
         .logo-text {
@@ -191,7 +191,7 @@
             }
             
             .logo img {
-                height: 100px;
+                height: 320px;
             }
             
             .logo {
@@ -227,11 +227,9 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="logo">
-            <img src="logo.png" alt="AryStation Logo">
-            <span class="logo-text">AryStation</span>
-        </h1>
-        <p class="tagline">Beyond Reality</p>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
         
         <div class="stream-player">
             <div class="stream-title">
@@ -239,8 +237,8 @@
                 🎵 Live Stream
             </div>
             <audio controls preload="none">
-                <source src="https://a11.asurahosting.com:8740/radio.mp3" type="audio/mpeg">
-                <source src="https://a11.asurahosting.com:8740/radio.mp3" type="audio/mp3">
+                <source src="https://radio.metachitect.com:8740/radio.mp3" type="audio/mpeg">
+                <source src="https://radio.metachitect.com:8740/radio.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -249,7 +247,7 @@
             <a href="/arystation" class="nav-btn">
                 🎵 AryStation
             </a>
-            <a href="/stream" class="nav-btn">
+            <a href="https://radio.metachitect.com:8740/radio.mp3" target="_blank" class="nav-btn">
                 <span class="live-indicator"></span>Live Stream
             </a>
             <a href="/dj" class="nav-btn">
