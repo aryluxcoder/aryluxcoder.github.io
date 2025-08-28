@@ -44,8 +44,37 @@
         
         .tagline {
             font-size: 1.2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
+        }
+        
+        .stream-player {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stream-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(255, 255, 255, 0.1);
         }
         
         .nav-buttons {
@@ -138,8 +167,19 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="logo">🎧 Radio MetaChitect</h1>
-        <p class="tagline">Your Ultimate Radio Experience</p>
+        <h1 class="logo">🎧 AryStation</h1>
+        <p class="tagline">Beyond Reality</p>
+        
+        <div class="stream-player">
+            <div class="stream-title">
+                <span class="live-indicator"></span>
+                🎵 Live Stream
+            </div>
+            <audio controls>
+                <source src="https://a11.asurahosting.com:8740/radio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
         
         <div class="nav-buttons">
             <a href="/arystation" class="nav-btn">
@@ -164,7 +204,7 @@
     </div>
     
     <div class="footer">
-        <p>© 2024 Radio MetaChitect - Broadcasting Excellence</p>
+        <p>© 2024 AryStation - Beyond Reality</p>
     </div>
 </body>
 </html>
